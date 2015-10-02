@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fun With Forms</title>
+</head>
+<body>
+<form  id="form1" action=" "/>
+<p>First Number: <input type="text" id="firstnum" /></p>
+<p>Second Number: <input type="text" id="secondnum" /></p>
+<p>Third Number: <input type="text" id="thirdnum" /></p>
+
+<input type="submit" value="Submit">
+</form>
+<p id="yournum">Please provide 3 numbers.</p>
+<p id="yourtotal"></p>
+<script>
+    document.getElementById("form1").onsubmit=function() { // function executes when form is submitted
+    first = document.getElementById("firstnum").value; //captures the value in the form and puts in a variable
+    second = document.getElementById("secondnum").value; //captures the value in the form and puts in a variable
+    third = document.getElementById("thirdnum").value; //captures the value in the form and puts in a variable
+    
+    numbers = [parseInt(first), parseInt(second), parseInt(third)];
+    total = 0;
+    writenum = "";
+    for (i=0; i<numbers.length; i++) {
+    total = total + numbers[i];
+    writenum = writenum + (numbers[i] + ", "); 
+    }
+    
+    document.getElementById("yournum").innerHTML = "The numbers are " + writenum;  // changes the innerHTML to the answer.
+    document.getElementById("yourtotal").innerHTML = "The total is " + total;  // changes the innerHTML to the answer.
+    
+    
+    return false; // required to not refresh the page
+    }
+  
+</script>
+</body>
+</html>

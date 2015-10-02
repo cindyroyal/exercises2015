@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fun With Forms</title>
+</head>
+<body>
+<form  id="form1" action=" "/>
+<p>First Name: <input type="text" id="firstname" /></p>
+
+<input type="submit" value="Submit">
+</form>
+<p id="yourname">Please provide your name above.</p>
+<script>
+    document.getElementById("form1").onsubmit=function() { // function executes when form is submitted
+    first = document.getElementById("firstname").value; //captures the value in the form and puts in a variable
+    document.getElementById("yourname").innerHTML = "Hi " + first + ". Welcome to the site."; // changes the innerHTML to the form element
+    return false; // required to not refresh the page
+    }
+  
+</script>
+</body>
+</html>

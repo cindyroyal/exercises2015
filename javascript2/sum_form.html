@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fun With Forms</title>
+</head>
+<body>
+<form  id="form1" action=" "/>
+<p>First Number: <input type="text" id="firstnum" /></p>
+<p>Second Number: <input type="text" id="secondnum" /></p>
+
+<input type="submit" value="Submit">
+</form>
+<p id="yournum">Please provide your name above to find out your popstar name.</p>
+<script>
+    document.getElementById("form1").onsubmit=function() { // function executes when form is submitted
+    first = document.getElementById("firstnum").value; //captures the value in the form and puts in a variable
+    second = document.getElementById("secondnum").value; //captures the value in the form and puts in a variable
+    total = parseInt(first) + parseInt(second);
+    document.getElementById("yournum").innerHTML = "Your total is " + total + ".";  // changes the innerHTML to the answer.
+    return false; // required to not refresh the page
+    }
+  
+</script>
+</body>
+</html>
